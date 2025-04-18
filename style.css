@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --left:0;
+}
+body {
+  --base-height: 164px;
+  --box-height: calc(var(--base-height) + 10px);
+  --box-width: calc(var(--base-height) / 5);
+  --span-height: calc(var(--base-height) / 4);
+  background-image: url("https://img.myloview.com/canvas-prints/math-vector-seamless-background-with-formulas-calculations-figures-chalk-writings-on-blackboard-effect-700-208879552.jpg");
+  background-color: rgba(0, 0, 0, 0.842);
+  background-blend-mode: multiply;
+  background-size: contain;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+li {
+  list-style: none;
+  width: var(--box-width);
+  height: var(--box-height);
+  display: flex;
+  flex-direction: column-reverse;
+  border: 2px solid white;
+  transition: .2s ease-in-out translate;
+  border-top: none;
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
+  transform: translate(0px, 0px) rotate(0deg);
+  span {
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: .4s ease-in-out;
+    animation: fade .6s linear forwards;
+  }
+}
+li.active {
+   translate: 0 -40px;
+}
+.pour{
+  /* position: absolute; */
+  z-index: 100;
+  animation: pour 1.3s ease-in alternate-reverse;
+}
+@keyframes pour {
+ 
+  20% {
+    transform: translate(20px, calc(var(--span-height) * -2)) rotate(10deg);
+  }
+  50% {
+    transform: translate(var(--left), calc(var(--span-height) * -2)) rotate(10deg) ;
+  }
+  75% {
+    transform: translate(var(--left), calc(var(--span-height) * -2)) rotate(50deg);
+  }
+  100% {
+    transform: translate(var(--left), calc(var(--span-height) * -2)) rotate(10deg);
+  }
+}
+
+
+.red {
+  background-color: rgb(243, 19, 3);
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: rgb(11, 53, 192);
+}
+.yellow {
+  background-color: yellow;
+}
+.violet{
+  background-color: violet;
+}
+.orange{
+  background-color: rgb(219, 105, 12);
+}
+.purple{
+  background-color: purple;
+}
+
+button[id="btn"]{
+   border: 2px solid gray;
+   border-radius: 5px;
+   background-color: transparent;
+   color: white;
+   font-size: 1.5rem;
+   padding : 0.5rem 1rem;
+   margin: 1rem auto;
+   /* display: none; */
+   cursor: pointer;
+   &:hover{
+     background-color: rgba(0, 0, 0, 0.151);
+     color: rgb(240, 217, 17);
+     border-color: rgb(240, 217, 17);
+     transition: .2s ease-in-out background-color;
+   }
+}
+.win{
+   margin: 1rem auto;
+   color: rgb(88, 196, 16);
+   font-size: 2rem;
+}
+
+@keyframes fade {
+  0% {
+    height: 0;
+  }
+  100% {
+   height: var(--span-height);
+  }
+}
