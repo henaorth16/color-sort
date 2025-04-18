@@ -14,7 +14,7 @@ Sort all the colored blocks into their respective containers! Each color must be
 
 ## 🌐 Live Demo
 
-👉 [Play it live here!](https://color-sort.netlify.app) <!-- Replace with your real deployed link -->
+👉 [Play it live here!](https://cool-sort.netlify.app) <!-- Replace with your real deployed link -->
 
 ---
 
